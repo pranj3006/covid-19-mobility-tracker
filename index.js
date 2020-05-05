@@ -13,6 +13,10 @@ const _ = require('lodash');
 const DATA_LAST_AVAILABLE_FOR_DATE = '2020-04-11';
 const DOWNLOAD_CONCURRENCY = 20;
 const PROCESS_CONCURRENCY = 30;
+var LATEST_DATE_OBJ = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+var DATA_LAST_AVAILABLE_FOR_DATE_OBJ = Date.parse(DATA_LAST_AVAILABLE_FOR_DATE);
+var LATEST_AVAILABLE_DATE = '';
+
 
 function makePDFUrl(date, countryCode) {
   return `https://www.gstatic.com/covid19/mobility/${date}_${countryCode}_Mobility_Report_en.pdf`;
